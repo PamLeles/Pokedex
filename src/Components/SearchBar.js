@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+    const {onSearch} = props
     const [search, setSearch] = useState("ditto")
     const OneChangeHandle = (e) => {
         setSearch(e.target.value)

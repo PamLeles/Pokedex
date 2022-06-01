@@ -1,3 +1,16 @@
+- JavaScript Assíncrono:
+    ->Async
+    ->Await
+    ->promise
+    ->Try
+    ->catch
+    
+- API (Aplication Programing Interface) 
+Forma de intermediar os resultados
+do 'back-end' coom o que se apresenta no 'front-end', conseguindo acessa-los 
+atráves de URL's.
+
+
 *-* input placeholder:tributo especifica uma dica curta que descreve o 
 valor esperado de um campo de entrada (por exemplo, um valor de amostra 
 ou uma breve descrição do formato esperado).
