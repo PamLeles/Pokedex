@@ -1,0 +1,13 @@
+*-* input placeholder:tributo especifica uma dica curta que descreve o 
+valor esperado de um campo de entrada (por exemplo, um valor de amostra 
+ou uma breve descrição do formato esperado).
+A dica curta é exibida no campo de entrada antes que o usuário insira um
+valor.
+Observação: o placeholderatributo funciona com os seguintes tipos de
+entrada: texto, pesquisa, url, tel, email e senha
+
+*-* box-shadow: Sombra da caixa propriedade do CSS,é utilizado para adicionar
+efeitos de sombra em volta de um elemento. Você pode especificar mais 
+de um efeito, os separando com virgulas.  box-shadowsfoco é descrito ao
+pelo deslocamentos (offset Y elemento);
+
