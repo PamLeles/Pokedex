@@ -40,6 +40,11 @@ nav {
   align-items: center;
   padding: 10px;
 }
+.pokedex-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repete(3, 1fr);
+}
 
 .App {
   text-align: center;
