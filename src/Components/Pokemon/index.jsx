@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.css';
+
 const Pokemon = (props) => {
   const { pokemon } = props;
   const onHeartClick = () => {
@@ -18,7 +20,7 @@ const Pokemon = (props) => {
         </div>
         <div className="card-botton">
           <div className="pokemon-type">
-            <div>
+            <div className="wrapper-type">
               {pokemon.types.map((type, index) => {
                 return (
                   <div key={index} className="pokemon-type-text">

@@ -1,5 +1,7 @@
 import React from 'react';
-import Pokemon from './Pokemon';
+import Pokemon from '../Pokemon';
+
+import './styles.css';
 
 const Pokedex = (props) => {
   const { pokemons, loading } = props;

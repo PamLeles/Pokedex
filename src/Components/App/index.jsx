@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import NavBar from './Components/NavBar';
-import SearchBar from './Components/SearchBar';
-import Pokedex from './Components/Pokedex';
-import { getPokemonData, getPokemons } from './API';
+import NavBar from '../NavBar/index';
+import SearchBar from '../SearchBar';
+import Pokedex from '../Pokedex';
+import getPokemons from '../../services/getPokemons';
+import getPokemonData from '../../services/getPokemonData';
+
+import './styles.css';
 
 function App() {
   const [loading, setLoading] = useState(false);
