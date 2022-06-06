@@ -95,4 +95,3 @@ module.exports = {
 
 - Reiniciar o VSCode.
 
-push
