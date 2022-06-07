@@ -32,15 +32,14 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('carregou!');
     fetchPokemons();
-  }, []);
+  }, [page]);
 
   return (
     <div>
       <NavBar />
       <SearchBar />
-      <Pokedex pokemons={pokemons} loading={loading} page={page} totalPages={totalPages} />
+      <Pokedex pokemons={pokemons} loading={loading} page={page} setPage={setPage} totalPages={totalPages} />
     </div>
   );
 }
