@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.css';
+
 const Pagination = (props) => {
   const { page, totalPages, onLeftClick, onRightClick } = props;
   return (
