@@ -6,6 +6,7 @@ import './styles.css';
 
 const Pokedex = (props) => {
   const { pokemons, loading, page, setPage, totalPages } = props;
+
   const onLeftClickHandler = () => {
     if (page > 0) {
       setPage(page - 1);

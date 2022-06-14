@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useCallback } from 'react';
 import NavBar from '../NavBar/index';
 import SearchBar from '../SearchBar';
 import Pokedex from '../Pokedex';
@@ -15,7 +15,7 @@ function App() {
 
   const itensPerPage = 25;
 
-  const fetchPokemons = async () => {
+  const fetchPokemons = useCallback(async () => {
     try {
       setLoading(true);
       const data = await getPokemons(itensPerPage, itensPerPage * page);
@@ -29,11 +29,11 @@ function App() {
     } catch (error) {
       console.log('fetchPokemons error:', error);
     }
-  };
+  }, [page]);
 
   useEffect(() => {
     fetchPokemons();
-  }, [page]);
+  }, [page, fetchPokemons]);
 
   return (
     <div>
