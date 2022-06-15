@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import NavBar from '../NavBar/index';
 import SearchBar from '../SearchBar';
 import Pokedex from '../Pokedex';

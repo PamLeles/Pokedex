@@ -33,6 +33,12 @@
   align-items: center;
   justify-content: space-between;
 }
+.pokemon-heart-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
 .pokemon-type {
   display: flex;
 }

@@ -5,6 +5,7 @@ import './styles.css';
 
 const NavBar = () => {
   const { favorites } = useContext(FavoriteContext);
+
   const logoImg = 'https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png';
   return (
     <nav>
