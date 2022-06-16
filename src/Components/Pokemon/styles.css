@@ -17,6 +17,8 @@
   justify-content: space-between;
   padding: 10px 10px 10px 0px;
   flex: 1;
+  background-color: white;
+  border-radius: 25px 5px 25px;
 }
 .card-top {
   display: flex;
