@@ -1,19 +1,20 @@
 import React, { useRef, useState } from 'react';
-import searchPokemon from '../../services/searchPokemon';
 
 import './styles.css';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const [search, setSearch] = useState('ditto');
-  const [pokemon, setPokemon] = useState();
+  const { onSearch } = props;
   const searchRef = useRef(null);
 
   const onChangeHandle = (e) => {
     setSearch(e.target.value);
+    if (e.target.value.length === 0) {
+      onSearch(undefined);
+    }
   };
-  const onbuttonClickHandler = async () => {
-    const result = await searchPokemon(searchRef.current.value.toLowerCase());
-    setPokemon(result);
+  const onbuttonClickHandler = () => {
+    onSearch(search);
   };
 
   return (
@@ -24,13 +25,6 @@ const SearchBar = () => {
       <div className="searchbar-btn">
         <button onClick={onbuttonClickHandler}>Buscar</button>
       </div>
-      {pokemon ? (
-        <div>
-          <div>Nome: {pokemon.name}</div>
-          <div>Peso: {pokemon.weight}</div>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-        </div>
-      ) : null}
     </div>
   );
 };

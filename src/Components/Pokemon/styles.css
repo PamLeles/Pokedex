@@ -37,7 +37,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
+  border-radius: 20%;
+  width: 30px;
+  height: 30px;
 }
 .pokemon-type {
   display: flex;

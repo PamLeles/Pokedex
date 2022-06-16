@@ -1,5 +1,39 @@
+body {
+  background-color: #00b894;
+  margin: 0;
+  padding: 0;
+}
 .pagination-container {
   display: flex;
   flex-direction: row;
+  margin: auto;
   align-items: center;
+  text-align: center;
+}
+.favorites {
+  margin: 0px 25px;
+  align-items: center;
+  padding: 0;
+}
+.btn {
+  border-radius: 50%;
+  align-items: center;
+  margin: 0px;
+  display: flex;
+  cursor: pointer;
+}
+
+.arrow-left .arrow-right {
+  transition: all 0.2s linear;
+}
+
+.arrow-left:hover {
+  transform: translate(-10px, 0px);
+}
+.arrow-right:hover {
+  transform: translate(10px, 0px);
+}
+
+.page {
+  margin: 0 6px;
 }

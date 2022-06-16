@@ -6,11 +6,13 @@ import getPokemons from '../../services/getPokemons';
 import getPokemonData from '../../services/getPokemonData';
 
 import './styles.css';
+import searchPokemon from '../../services/searchPokemon';
 
 function App() {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
   const [pokemons, setPokemons] = useState([]);
 
   const itensPerPage = 25;
@@ -35,11 +37,35 @@ function App() {
     fetchPokemons();
   }, [page, fetchPokemons]);
 
+  const onSearchHandler = async (pokemon) => {
+    if (!pokemon) {
+      return fetchPokemons();
+    }
+
+    setLoading(true);
+    setNotFound(false);
+    const result = await searchPokemon(pokemon);
+
+    if (!result) {
+      setNotFound(true);
+      return;
+    }
+
+    setPokemons([result]);
+    setPage(0);
+    setTotalPages(1);
+    setLoading(false);
+  };
+
   return (
     <div>
       <NavBar />
-      <SearchBar />
-      <Pokedex pokemons={pokemons} loading={loading} page={page} setPage={setPage} totalPages={totalPages} />
+      <SearchBar onSearch={onSearchHandler} />
+      {notFound ? (
+        <div className="not-found-text">Errouu!!!!</div>
+      ) : (
+        <Pokedex pokemons={pokemons} loading={loading} page={page} setPage={setPage} totalPages={totalPages} />
+      )}
     </div>
   );
 }
