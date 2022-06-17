@@ -1,5 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import FavoriteContext from '../../contexts/Favorites/context';
+import hover3D from '../../handlers/hover3d';
+import { config_3dCard, heart } from './data';
 
 import './styles.css';
 
@@ -7,11 +9,26 @@ const Pokemon = (props) => {
   const { favorites, updateFavoritesPokemons } = useContext(FavoriteContext);
   const { pokemon } = props;
 
+  const cardRef = useRef(null);
+
+  const [rotate3d, setRotate3d] = useState({});
+
+  const handleMove = ({ pageX, pageY }) => {
+    if (cardRef.current) hover3D(pageX, pageY, config_3dCard, cardRef.current, setRotate3d);
+  };
+  const handleTouchMove = (event) => {
+    event.preventDefault();
+    const { pageX, pageY } = event.touches[0];
+    handleMove({ pageX, pageY });
+  };
+
+  const handleLeave = () => {
+    setRotate3d({});
+  };
+
   const onHeartClick = () => {
     updateFavoritesPokemons(pokemon.name);
   };
-
-  const heart = favorites.includes(pokemon.name) ? '💗' : '🖤';
 
   const handleBackgroundColor = () => {
     const { name: pokemonType } = pokemon.types[0].type;
@@ -61,30 +78,39 @@ const Pokemon = (props) => {
     backgroundColor: handleBackgroundColor(),
   };
 
-  return (
-    <div className="pokemon-card">
-      <div className="pokemon-image-container">
-        <img alt={pokemon.name} src={pokemon.sprites.front_default} className="pokemon-image" />
-      </div>
-      <div className="card-body" style={styles}>
-        <div className="card-top">
-          <h3>{pokemon.name}</h3>
-          <div>#{pokemon.id}</div>
-        </div>
-        <div className="card-botton">
-          <div className="pokemon-type">
-            <div className="wrapper-type">
-              {pokemon.types.map((type, index) => {
-                return (
-                  <div key={index} className="pokemon-type-text">
-                    {type.type.name}
-                  </div>
-                );
-              })}
+  const renderType = () => (
+    <div className="pokemon-type">
+      <div className="wrapper-type">
+        {pokemon.types.map((type, index) => {
+          return (
+            <div key={index} className="pokemon-type-text">
+              {type.type.name}
             </div>
-          </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className="pokemon-card"
+      ref={cardRef}
+      onMouseMove={handleMove}
+      onTouchMove={handleTouchMove}
+      onMouseLeave={handleLeave}
+      onTouchEnd={handleLeave}
+    >
+      <div className="card-body" style={{ ...rotate3d, ...styles }}>
+        <div className="left-content">
+          <h3>{pokemon.name}</h3>
+          {renderType()}
+        </div>
+        <img alt={pokemon.name} src={pokemon.sprites.front_default} className="pokemon-image" />
+        <div className="right-content">
+          <div> # {pokemon.id}</div>
           <button className="pokemon-heart-btn" onClick={onHeartClick}>
-            {heart}
+            {heart(favorites.includes(pokemon.name))}
           </button>
         </div>
       </div>

@@ -1,8 +1,3 @@
-body {
-  background-color: #00b894;
-  margin: 0;
-  padding: 0;
-}
 .pagination-container {
   display: flex;
   flex-direction: row;
@@ -23,15 +18,25 @@ body {
   cursor: pointer;
 }
 
-.arrow-left .arrow-right {
+@keyframes slide {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(-5px, 0px);
+  }
+}
+
+.arrow-left,
+.arrow-right {
   transition: all 0.2s linear;
 }
 
 .arrow-left:hover {
-  transform: translate(-10px, 0px);
+  animation: slide 0.4s linear infinite;
 }
 .arrow-right:hover {
-  transform: translate(10px, 0px);
+  animation: slide 0.4s linear infinite reverse;
 }
 
 .page {

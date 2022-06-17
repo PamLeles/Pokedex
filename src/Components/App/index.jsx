@@ -15,7 +15,7 @@ function App() {
   const [notFound, setNotFound] = useState(false);
   const [pokemons, setPokemons] = useState([]);
 
-  const itensPerPage = 25;
+  const itensPerPage = 21;
 
   const fetchPokemons = useCallback(async () => {
     try {

@@ -28,7 +28,7 @@ const Pokedex = (props) => {
         />
       </div>
       {loading ? (
-        <div>Carregando, segura ai ..</div>
+        <div className="carregar">Carregando, segura ai ..</div>
       ) : (
         <div className="pokedex-grid">
           {pokemons &&
