@@ -1,6 +1,7 @@
 import React from 'react';
 import Pagination from '../Pagination/index';
 import Pokemon from '../Pokemon';
+import pokeball from '../../assets/loading.png';
 
 import './styles.css';
 
@@ -28,7 +29,9 @@ const Pokedex = (props) => {
         />
       </div>
       {loading ? (
-        <div className="carregar">Carregando, segura ai ..</div>
+        <div className="loading">
+          <img className="loading-child" src={pokeball} />
+        </div>
       ) : (
         <div className={`pokedex-grid ${pokemons.length === 1 ? 'searching' : ''}`}>
           {pokemons &&
