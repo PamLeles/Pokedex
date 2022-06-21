@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar';
 import Pokedex from '../Pokedex';
 import getPokemons from '../../services/getPokemons';
 import getPokemonData from '../../services/getPokemonData';
+import PageNotFound from '../PageNotFound';
 
 import './styles.css';
 import searchPokemon from '../../services/searchPokemon';
@@ -38,15 +39,17 @@ function App() {
   }, [page, fetchPokemons]);
 
   const onSearchHandler = async (pokemon) => {
-    if (!pokemon) {
+    if (!pokemon.length) {
+      setLoading(false);
+      setNotFound(false);
       return fetchPokemons();
     }
 
     setLoading(true);
-    setNotFound(false);
+
     const result = await searchPokemon(pokemon);
 
-    if (!result) {
+    if (!result && pokemon.length) {
       setNotFound(true);
       return;
     }
@@ -55,14 +58,15 @@ function App() {
     setPage(0);
     setTotalPages(1);
     setLoading(false);
+    setNotFound(false);
   };
 
   return (
-    <div>
+    <div className="page-body">
       <NavBar />
       <SearchBar onSearch={onSearchHandler} />
       {notFound ? (
-        <div className="not-found-text">Errouu!!!!</div>
+        <PageNotFound />
       ) : (
         <Pokedex pokemons={pokemons} loading={loading} page={page} setPage={setPage} totalPages={totalPages} />
       )}

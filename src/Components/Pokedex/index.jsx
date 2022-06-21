@@ -18,7 +18,7 @@ const Pokedex = (props) => {
     }
   };
   return (
-    <div>
+    <>
       <div className="pokedex-header">
         <Pagination
           page={page + 1}
@@ -30,14 +30,14 @@ const Pokedex = (props) => {
       {loading ? (
         <div className="carregar">Carregando, segura ai ..</div>
       ) : (
-        <div className="pokedex-grid">
+        <div className={`pokedex-grid ${pokemons.length === 1 ? 'searching' : ''}`}>
           {pokemons &&
             pokemons.map((pokemon, index) => {
               return <Pokemon key={index} pokemon={pokemon} />;
             })}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

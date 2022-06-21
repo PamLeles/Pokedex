@@ -1,18 +1,13 @@
 nav {
-  height: 100px;
+  height: 75px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
   background-color: #ab1414;
-  height: 50%;
+  justify-content: center;
+  padding: 8px 0;
 }
 
 .navbar-img {
-  width: 200px;
-  justify-content: center;
-  margin: auto;
-  padding: 0;
-  margin-top: 2%;
-  padding-bottom: 4px;
+  width: 160px;
 }

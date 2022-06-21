@@ -25,6 +25,14 @@
     justify-content: center;
   }
 }
+.searching {
+  grid-auto-columns: 360px;
+  grid-auto-rows: 150px;
+  grid-template-columns: none;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+}
 .pokedex-header {
   display: flex;
   flex-direction: row;
