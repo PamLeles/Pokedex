@@ -39,7 +39,7 @@ const Pokemon = (props) => {
       case 'fire':
         return '#E67E22';
       case 'water':
-        return '#AED6F1';
+        return '#B9F2F5git add .';
       case 'normal':
         return '#F1C40F';
       case 'bug':
@@ -65,7 +65,7 @@ const Pokemon = (props) => {
       case 'dragon':
         return '#d90303';
       case 'dark':
-        return '#032128';
+        return '#91B8AB';
       case 'steel':
         return '#16a8b7';
 
