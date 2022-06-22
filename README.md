@@ -51,7 +51,7 @@ O Pokédex é uma aplicação, onde é possivel pesquisar o nome do Pokémon, tr
 
 ## 💻 Layout
 
-Você pode visualizar o layout do projeto através []().
+Você pode visualizar o layout do projeto através [deste link](https://pokedex-7291gxgna-pamleles.vercel.app)
 
 ---
 
