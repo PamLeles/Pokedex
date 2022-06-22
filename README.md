@@ -4,17 +4,9 @@ Pokédex
 <img widht='25px' height='25px' src="./src/assets/loading.png"/>
 </h1>
 
-<p>Projeto construido com React consumindo API PokéAPI, utlizando hooks:</p>
-<ul>
-<li> useState</li>
-<li> useEffect</li>
-<li> useContext</li>
-<li>LocalStorage</li>
-</ul>
-
 <p  aling="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-API">API</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+  <a href="#-api">API</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-licença">Licença</a>
@@ -34,16 +26,26 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - HTML
 - CSS
 - JavaScript
+
+### Biblioteca
+
 - React-Js
 
 ## API
 
-<p> Todos os dados de Pokémon   </p>
 <img  widht='100px' height='100px' aling='center' src='https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png'/>
 
 ## 💻 Projeto
 
-O Pokédex é uma aplicação, onde é possivel pesquisar para saber qual o tipo do pokémon e favoritar 💗.
+O Pokédex é uma aplicação, onde é possivel pesquisar o nome do Pokémon, trazendo informações do tipo do pokémon, você também pode favoritar o Pokémon 💗.
+
+<p> O projeto foi construido com React consumindo API PokéAPI, utlizando hooks:</p>
+<ul>
+<li> useState</li>
+<li> useEffect</li>
+<li> useContext</li>
+<li>LocalStorage</li>
+</ul>
 
 ## 🔖 Layout
 
