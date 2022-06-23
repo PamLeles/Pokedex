@@ -47,7 +47,7 @@ function App() {
 
     setLoading(true);
 
-    const result = await searchPokemon(pokemon);
+    const result = await searchPokemon(pokemon.toLowerCase());
 
     if (!result && pokemon.length) {
       setNotFound(true);
